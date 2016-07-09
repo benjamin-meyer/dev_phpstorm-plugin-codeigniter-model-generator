@@ -1,0 +1,34 @@
+<idea-plugin version="2">
+  <id>com.performed.phpstorm.plugins.codeigniter.model_generator</id>
+  <name>CodeIgniter Model Generator</name>
+  <version>1.0</version>
+  <vendor email="b.meyer@performed.ch" url="http://www.performed.ch">Performed</vendor>
+
+  <depends>com.jetbrains.php</depends>
+  <depends>com.intellij.modules.platform</depends>
+
+  <description><![CDATA[
+      Shows a list of tables in database that have no coresponding model in the models folder yet.<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Init release.<br>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <extensions defaultExtensionNs="com.intellij">
+      <!-- Configuration is stored in a extra xml file via "Persisting State of Components" -->
+      <projectService serviceInterface="Configuration" serviceImplementation="Configuration"/>
+  </extensions>
+
+  <actions>
+    <action id="php_ci_generate_models" class="PHPCIGenerateModels" text="Generate CI Models"
+            description="Generates CodeIgniter Models from database">
+      <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="ToolsMenu"/>
+    </action>
+  </actions>
+
+</idea-plugin>
